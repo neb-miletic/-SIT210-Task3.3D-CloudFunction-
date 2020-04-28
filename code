@@ -1,0 +1,53 @@
+
+int led1 = D7;
+
+void myHandler(const char *Deakin_RIOT_SIT210_Photon_Buddy, const char *data)
+{
+
+//pinMode(led1,OUTPUT);
+if (strcmp(data,"wave")==0) {
+// if your buddy’s sends wave then turn your board LED on and off 3 times
+    digitalWrite(led1,HIGH);
+    delay(1000);
+    digitalWrite(led1,LOW);
+    delay(100);
+    digitalWrite(led1,HIGH);
+    delay(1000);
+    digitalWrite(led1,LOW);
+    delay(100);  
+    digitalWrite(led1,HIGH);
+    delay(1000);
+    digitalWrite(led1,LOW);
+    delay(100);  
+    Serial.println(data);
+}
+else if (strcmp(data,"pat")==0) {
+
+digitalWrite(led1,HIGH);
+delay(100);
+digitalWrite(led1,LOW);
+delay(100);
+digitalWrite(led1,HIGH);
+delay(100);
+digitalWrite(led1,LOW);
+delay(100);
+digitalWrite(led1,HIGH);
+delay(100);
+digitalWrite(led1,LOW);
+delay(100);
+
+
+}
+}
+void setup()
+
+{
+  pinMode(led1,OUTPUT);
+  Particle.subscribe("Deakin_RIOT_SIT210_Photon_Buddy", myHandler);
+  Serial.begin(9600);
+}
+
+void loop() {
+
+
+}
