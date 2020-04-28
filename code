@@ -4,7 +4,7 @@ int led1 = D7;
 void myHandler(const char *Deakin_RIOT_SIT210_Photon_Buddy, const char *data)
 {
 
-//pinMode(led1,OUTPUT);
+
 if (strcmp(data,"wave")==0) {
 // if your buddy’s sends wave then turn your board LED on and off 3 times
     digitalWrite(led1,HIGH);
