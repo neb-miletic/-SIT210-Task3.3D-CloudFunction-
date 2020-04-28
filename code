@@ -21,6 +21,7 @@ if (strcmp(data,"wave")==0) {
     delay(100);  
     Serial.println(data);
 }
+// code for the pat signal. Led has different pattern than wave signal. Instead of 3 long high led, it has 3 short ones
 else if (strcmp(data,"pat")==0) {
 
 digitalWrite(led1,HIGH);
